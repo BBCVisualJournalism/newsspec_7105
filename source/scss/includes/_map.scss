@@ -1,0 +1,145 @@
+.map {
+    @include respondMinMax (768px, false) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+    }
+}
+
+.map__img {
+    @include respondMinMax (false, 398px) {
+        max-width: 303px;
+        width: 100%;
+    }
+    @include respondMinMax (399px, 767px) {
+        width: 399px;
+    }
+    @include respondMinMax (768px, 975px) {
+        margin-left: 177px;
+        width: 394px;
+    }
+    @include respondMinMax (976px, false) {
+        margin-left: 200px;
+        width: 498px;
+    }
+}
+
+.map__region-list {
+    display: none;
+    left: 42px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+
+    @include respondMinMax (768px, false) {
+        display: block;
+    }
+}
+
+.map__region-title {
+    font-weight: 600;
+    left: 0;
+    position: absolute;
+
+    span {
+        background: white;
+        padding-right: 0.25em;
+        position: relative;
+        z-index: 10;
+    }
+
+    &:after {
+        display: block;
+        content: "";
+        height: 1px;
+        background: black;
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+    }
+
+}
+
+.map__region-description {
+    color: #4A7194;
+    font-weight: 300;
+    left: 0;
+    margin: 1.2em 0 0;
+    position: absolute;
+    width: 200px;
+}
+
+.map__region-title,
+.map__region-description {
+    &--0 {
+        top: 74px;
+        &:after {
+            width: 238px;
+        }
+        @include respondMinMax (976px, false) {
+            top: 94px;
+            &:after {
+                width: 292px;
+            }
+        }
+    }
+
+    &--1 {
+        top: 170px;
+        &:after {
+            width: 210px;
+        }
+        @include respondMinMax (976px, false) {
+            top: 216px;
+            &:after {
+                width: 258px;
+            }
+        }
+    }
+
+    &--2 {
+        top: 263px;
+        &:after {
+            width: 185px;
+        }
+        @include respondMinMax (976px, false) {
+            top: 332px;
+            &:after {
+                width: 227px;
+            }
+        }
+    }
+
+    &--3 {
+        top: 327px;
+        &:after {
+            width: 178px;
+        }
+        @include respondMinMax (976px, false) {
+            top: 411px;
+            &:after {
+                width: 218px;
+            }
+        }
+    }
+
+    &--4 {
+        left: 340px;
+        top: 275px;
+        width: 200px;
+        &:after {
+            left: -79px;
+            width: 74px;
+        }
+        @include respondMinMax (976px, false) {
+            left: 451px;
+            top: 347px;
+            &:after {
+                left: -133px;
+                width: 129px;
+            }
+        }
+    }
+
+}

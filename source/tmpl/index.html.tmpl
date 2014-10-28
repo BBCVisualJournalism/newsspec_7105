@@ -1,0 +1,68 @@
+<%= include('includes/top.tmpl') %>
+
+    <div class="main">
+
+        <div class="map">
+
+            <div class="delayed-image-load map__img" data-src="<%= pathStatic %>/<%= vocab_dir %>/img/303/syria_ethnic_map.png" data-width="303" data-alt="<%= key_title %>"></div>
+
+            <%
+                var regions = [{
+                    'title': region3,
+                    'description': '285,601 refugees<br />15% of total'
+                },{
+                    'title': region2,
+                    'description': '344,198 refugees<br />18% of total'
+                },{
+                    'title': region5,
+                    'description': '160,998 refugees<br />8% of total'
+                },{
+                    'title': region1,
+                    'description': '355,485 refugees<br />19% of total'
+                },{
+                    'title': region4,
+                    'description': '242,435 refugees<br />13% of total'
+                }];
+            %>
+
+            <dl class="map__region-list">
+                <% regions.forEach(function(region, i) { %>
+                    <dt class="map__region-title map__region-title--<%= i %>"><span><%= region.title %></span></dt>
+                    <dd class="map__region-description map__region-description--<%= i %>"><%= region.description %></dd>
+                <% }); %>
+            </dl>
+
+        </div>
+
+        <div class="legend">
+
+            <h2 class="legend__title"><%= key_title %></h2>
+
+            <div class="legend__density">
+                <div class="legend__density-title"><%= key_density %>:</div>
+                <div class="legend__high"><%= key_high %></div>
+                <div class="legend__low"><%= key_low %></div>
+            </div>
+
+            <ul class="legend__list">
+                <li class="legend__item legend__item--col1 legend__item--1"><%= ethnicity_key1 %></li>
+                <li class="legend__item legend__item--col1 legend__item--2"><%= ethnicity_key2 %></li>
+                <li class="legend__item legend__item--col1 legend__item--3"><%= ethnicity_key3 %></li>
+                <li class="legend__item legend__item--col1 legend__item--4"><%= ethnicity_key4 %></li>
+                <li class="legend__item legend__item--col1 legend__item--5"><%= ethnicity_key5 %></li>
+                <li class="legend__item legend__item--col1 legend__item--6"><%= ethnicity_key6 %></li>
+                <li class="legend__item legend__item--col2 legend__item--7"><%= ethnicity_key7 %></li>
+                <li class="legend__item legend__item--col2 legend__item--8"><%= ethnicity_key8 %></li>
+                <li class="legend__item legend__item--col2 legend__item--9"><%= ethnicity_key9 %></li>
+                <li class="legend__item legend__item--col2 legend__item--11"><%= ethnicity_key11 %></li>
+                <li class="legend__item legend__item--col2 legend__item--12"><%= ethnicity_key12 %></li>
+                <li class="legend__item legend__item--col2 legend__item--13"><%= ethnicity_key13 %></li>
+            </ul>
+
+        </div>
+
+        <p class="credit"><%= map_credit %></p>
+
+    </div>
+
+<%= include('includes/bottom.tmpl') %>
